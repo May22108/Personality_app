@@ -12,7 +12,7 @@ st.title("Personality Prediction Web App (Introvert vs Extrovert)")
 st.markdown("Enter the behavioral details below to predict the personality.")
 st.write("Logistic Regression Model with Pipeline")
 
-logo_path = "personality_app/pictures/PU_logo.png"
+logo_path = "PU_logo.png"
 if os.path.exists(logo_path):
     st.sidebar.image(logo_path, width=150)
 
@@ -42,8 +42,8 @@ user_data ={
 }
 
 p_image = {
-    'Introvert': 'personality_app/pictures/Introvert.jpg',
-    'Extrovert': 'personality_app/pictures/Extrovert.jpg'
+    'Introvert': 'Introvert.jpg',
+    'Extrovert': 'Extrovert.jpg'
 }
 
 input_df = pd.DataFrame([user_data])
@@ -60,3 +60,4 @@ if st.button("Predict Personality"):
         st.error(f" Prediction failed: {e}")
 
         st.write("Please check that the model and inputs match the training columns.")
+
