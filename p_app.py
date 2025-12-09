@@ -7,10 +7,11 @@ def load_model():
     with open("personality_model.pkl", "rb") as f:
         model = pickle.load(f)
     return model
-
+model = load_model()
 st.title("Personality Prediction Web App (Introvert vs Extrovert)")
-st.markdown("Enter the behavioral details below to predict the personality.")
 st.write("Logistic Regression Model with Pipeline")
+st.markdown("Enter the behavioral details below to predict the personality.")
+
 
 logo_path = "PU_logo.png"
 if os.path.exists(logo_path):
@@ -54,10 +55,16 @@ if st.button("Predict Personality"):
         prediction = model.predict(input_df)[0]
         st.subheader("Predicted Personality:")
         st.success(f"**{prediction}**")
-        st.image(p_image[prediction], caption = f"{prediction}, width = 400")
+        st.image(p_image[prediction], caption = f"{prediction}, width = 200")
 
     except Exception as e:
         st.error(f" Prediction failed: {e}")
 
         st.write("Please check that the model and inputs match the training columns.")
+prediction = model.predict(input_df)[0]
+probability = model.predict_proba(input_df)[0][1]
+st.write("### Prediction Probability")
+st.progress(probability)
+st.write(f"{probability*100:.2f}% chance of being {prediction}")
+
 
