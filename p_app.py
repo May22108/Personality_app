@@ -32,7 +32,7 @@ Stage_fear = st.selectbox("Do you have Stage Fear?", ["Yes","No"])
 Drained_after_socializing = st.selectbox("Do you feel drained after socializing?",["Yes","No"])
 
 user_data ={
-    "Time_spent_alone": Time_spent_Alone,
+    "Time_spent_Alone": Time_spent_Alone,
     "Stage_fear": Stage_fear,
     "Social_event_attendance": Social_event_attendance,
     "Going_outside": Going_outside,
@@ -58,4 +58,5 @@ if st.button("Predict Personality"):
 
     except Exception as e:
         st.error(f" Prediction failed: {e}")
+
         st.write("Please check that the model and inputs match the training columns.")
