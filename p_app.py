@@ -49,7 +49,10 @@ p_image = {
 }
 
 input_df = pd.DataFrame([user_data])
-
+recommendations = {
+    "Introvert": "As an introvert, consider setting aside quiet time for yourself, engage in meaningful one-on-one conversations, and don't feel pressured to attend every social event. Focus on deepening your close relationships.",
+    "Extrovert": "As an extrovert, make sure to balance social activities with some alone time to recharge. Take opportunities to lead group activities and expand your social network."
+}
 if st.button("Predict Personality"):
     try:
         model = load_model()
@@ -57,7 +60,9 @@ if st.button("Predict Personality"):
         st.subheader("Predicted Personality:")
         st.success(f"**{prediction}**")
         st.image(p_image[prediction], caption = f"{prediction}, width = 200")
-
+        st.subheader("Recommendation:")
+        st.info(recommendations[prediction])
+        
     except Exception as e:
         st.error(f" Prediction failed: {e}")
 
@@ -68,11 +73,11 @@ st.write("### Prediction Probability")
 st.progress(probability)
 st.write(f"{probability*100:.2f}% chance of being {prediction}")
 
-personality_mapping = {0: "Introvert", 1: "Extrovert"}
-recommendations = {
-    0: "As an Introvert, consider activities that recharge you individually, like reading, reflecting, or focused work.",
-    1: "As an Extrovert, seek social engagement and collaborative opportunities to energize yourself."
-}
+
+
+
+
+
 
 
 
