@@ -73,7 +73,8 @@ recommendations = {
     0: "As an Introvert, consider activities that recharge you individually, like reading, reflecting, or focused work.",
     1: "As an Extrovert, seek social engagement and collaborative opportunities to energize yourself."
 }
-st.write(recommendations[prediction])
+
+
 
 
 
