@@ -69,12 +69,12 @@ st.progress(probability)
 st.write(f"{probability*100:.2f}% chance of being {prediction}")
 
 personality_mapping = {0: "Introvert", 1: "Extrovert"}
-personality = personality_mapping[prediction]
 recommendations = {
     0: "As an Introvert, consider activities that recharge you individually, like reading, reflecting, or focused work.",
     1: "As an Extrovert, seek social engagement and collaborative opportunities to energize yourself."
 }
 st.write(recommendations[prediction])
+
 
 
 
