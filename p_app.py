@@ -29,7 +29,7 @@ Friends_circle_size = st.number_input("How many close friends do you have in gen
 Post_frequency = st.number_input("How many posts do you upload on social media per week?",min_value = 0.0, max_value = 10.0)
 
 Stage_fear = st.radio("Do you have Stage Fear?", ["Yes","No"])
-Drained_after_socializing = st.checkbox("Do you feel drained after socializing?",["Yes","No"])
+Drained_after_socializing = st.toggle("Do you feel drained after socializing?",["Yes","No"])
 
 user_data ={
     "Time_spent_Alone": Time_spent_Alone,
@@ -65,6 +65,7 @@ probability = model.predict_proba(input_df)[0][1]
 st.write("### Prediction Probability")
 st.progress(probability)
 st.write(f"{probability*100:.2f}% chance of being {prediction}")
+
 
 
 
