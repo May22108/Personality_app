@@ -19,7 +19,6 @@ if os.path.exists(logo_path):
 
 st.sidebar.header("Midterm Project")
 st.sidebar.markdown("**Student Name:** May Phuu Thwel")
-st.sidebar.markdown("**Student ID:** PIUS20230002")
 st.sidebar.markdown("**Course Name:** Introduction to Machine Learning")
 st.sidebar.markdown("**Instructor Name:** Professor Nwe Nwe Htay Win")
 
@@ -66,5 +65,6 @@ probability = model.predict_proba(input_df)[0][1]
 st.write("### Prediction Probability")
 st.progress(probability)
 st.write(f"{probability*100:.2f}% chance of being {prediction}")
+
 
 
