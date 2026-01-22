@@ -50,7 +50,7 @@ p_image = {
 
 input_df = pd.DataFrame([user_data])
 recommendations = {
-    "Introvert": "As with more percent on introversion, to recharge your energy, consider setting aside quiet time for yourself, engage in meaningful one-on-one conversations, and don't feel pressured to attend every social event. Focus on deepening your close relationships, do your solo favorite activites. Find some interesting activites with these article: https://introvertdear.com/news/14-introvert-friendly-activities-to-do-alone-or-with-a-small-group/",
+    "Introvert": "As with more percent on introversion, to recharge your energy, consider setting aside quiet time for yourself, engage in meaningful one-on-one conversations, and don't feel pressured to attend every social event. Focus on deepening your close relationships, do your solo favorite activites. Find some interesting activites with this article: https://introvertdear.com/news/14-introvert-friendly-activities-to-do-alone-or-with-a-small-group/",
     "Extrovert": "As with more percent on extroversion, to boost your energy, make sure to balance social activities with some alone time to recharge. Take opportunities to lead group activities and expand your social network. Try some hobbies from this article: https://www.underhobby.net/the-best-hobbies-for-extroverts/ "
 }
 if st.button("Predict Personality"):
@@ -72,6 +72,7 @@ probability = model.predict_proba(input_df)[0][1]
 st.write("### Prediction Probability")
 st.progress(probability)
 st.write(f"{probability*100:.2f}% chance of being {prediction}")
+
 
 
 
