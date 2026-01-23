@@ -9,7 +9,7 @@ def load_model():
         model = pickle.load(f)
     return model
 model = load_model()
-logo_path = "PU_logo.png"
+logo_path = "pulogo.png"
 if os.path.exists(logo_path):
     st.image(logo_path, width=150)
 
@@ -19,7 +19,7 @@ st.write("Logistic Regression Model with Pipeline")
 st.markdown("Please enter the behavioral details and time spent below to predict the personality.")
 
 
-logo_path = "PU_logo.png"
+logo_path = "mpt.jpg"
 if os.path.exists(logo_path):
     st.sidebar.image(logo_path, width=150)
 
@@ -78,6 +78,7 @@ probability = model.predict_proba(input_df)[0][1]
 st.write("### Prediction Probability")
 st.progress(probability)
 st.write(f"{probability*100:.2f}% chance of being {prediction}")
+
 
 
 
