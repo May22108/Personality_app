@@ -27,7 +27,7 @@ st.sidebar.header("Midterm Project")
 st.sidebar.markdown("**Student Name:** May Phuu Thwel")
 st.sidebar.markdown("**Major:** Statistics and Data Science")
 st.sidebar.markdown("**Course Name:** Introduction to Machine Learning")
-st.sidebar.markdown("**Instructor Name:** Professor Nwe Nwe Htay Win")
+st.sidebar.markdown("**Instructor Name:** Professor Dr. Nwe Nwe Htay Win")
 
 Time_spent_Alone = st.number_input("Time spent alone per day (in hours)", min_value = 0.0, max_value = 11.0)
 Social_event_attendance = st.slider("Social event attendance score per month", min_value = 0.0, max_value = 10.0)
@@ -78,6 +78,7 @@ probability = model.predict_proba(input_df)[0][1]
 st.write("### Prediction Probability")
 st.progress(probability)
 st.write(f"{probability*100:.2f}% chance of being {prediction}")
+
 
 
 
