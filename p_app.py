@@ -31,7 +31,7 @@ st.sidebar.markdown("**Instructor Name:** Professor Nwe Nwe Htay Win")
 
 Time_spent_Alone = st.number_input("Time spent alone per day (in hours)", min_value = 0.0, max_value = 11.0)
 Social_event_attendance = st.slider("Social event attendance score per month", min_value = 0.0, max_value = 10.0)
-Going_outside = st.slider("How often do you go outside per week?(In score)",min_value = 0.0, max_value = 7.0)
+Going_outside = st.slider("How often do you go outside per week? (in score)",min_value = 0.0, max_value = 7.0)
 Friends_circle_size = st.number_input("How many close friends do you have in general?",min_value = 0.0, max_value = 15.0)
 Post_frequency = st.number_input("How many posts do you upload on social media per week?",min_value = 0.0, max_value = 10.0)
 
@@ -78,6 +78,7 @@ probability = model.predict_proba(input_df)[0][1]
 st.write("### Prediction Probability")
 st.progress(probability)
 st.write(f"{probability*100:.2f}% chance of being {prediction}")
+
 
 
 
