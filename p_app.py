@@ -21,7 +21,7 @@ st.markdown("Please enter the behavioral details and time spent below to predict
 
 logo_path = "mpt2.jpg"
 if os.path.exists(logo_path):
-    st.sidebar.image(logo_path, width=150)
+    st.sidebar.image(logo_path, width=200)
 
 st.sidebar.header("Midterm Project")
 st.sidebar.markdown("**Student Name:** May Phuu Thwel")
@@ -78,6 +78,7 @@ probability = model.predict_proba(input_df)[0][1]
 st.write("### Prediction Probability")
 st.progress(probability)
 st.write(f"{probability*100:.2f}% chance of being {prediction}")
+
 
 
 
