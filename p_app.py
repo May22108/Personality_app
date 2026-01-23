@@ -11,7 +11,7 @@ def load_model():
 model = load_model()
 logo_path = "pulogo.png"
 if os.path.exists(logo_path):
-    st.image(logo_path, width=350)
+    st.image(logo_path, width=400)
 
 
 st.title("Personality Prediction Web App (Are you an introvert or extrovert?)")
@@ -25,7 +25,7 @@ if os.path.exists(logo_path):
 
 st.sidebar.header("Midterm Project")
 st.sidebar.markdown("**Student Name:** May Phuu Thwel")
-st.sidebar.markdown("**Major:**Statistics and Data Science")
+st.sidebar.markdown("**Major:** Statistics and Data Science")
 st.sidebar.markdown("**Course Name:** Introduction to Machine Learning")
 st.sidebar.markdown("**Instructor Name:** Professor Nwe Nwe Htay Win")
 
@@ -78,6 +78,7 @@ probability = model.predict_proba(input_df)[0][1]
 st.write("### Prediction Probability")
 st.progress(probability)
 st.write(f"{probability*100:.2f}% chance of being {prediction}")
+
 
 
 
